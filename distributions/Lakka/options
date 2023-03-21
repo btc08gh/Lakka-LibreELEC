@@ -216,11 +216,16 @@
                   desmume \
                   desmume_2015 \
                   dinothawr \
+                  dirksimple \
                   dolphin \
+                  dosbox \
+                  dosbox_core \
                   dosbox_pure \
                   dosbox_svn \
+                  easyrpg \
                   emux_sms\
                   ecwolf \
+                  ep128emu \
                   fake_08 \
                   fbalpha2012 \
                   fbneo \
@@ -242,6 +247,7 @@
                   hatari \
                   higan_sfc \
                   higan_sfc_balanced \
+                  jaxe \
                   jumpnbump \
                   kronos \
                   lowres_nx \
@@ -264,6 +270,7 @@
                   neocd \
                   nestopia \
                   np2kai \
+                  numero \
                   nxengine \
                   o2em \
                   openlara \
@@ -291,7 +298,6 @@
                   sameboy \
                   sameduck \
                   scummvm \
-                  scummvm_mainline \
                   snes9x \
                   snes9x2002 \
                   snes9x2005 \
@@ -303,6 +309,7 @@
                   swanstation \
                   tgbdual \
                   theodore \
+                  thepowdertoy \
                   tic80 \
                   tyrquake \
                   uae4arm \
@@ -337,6 +344,8 @@
                                desmume \
                                desmume_2015 \
                                dolphin \
+                               dosbox \
+                               dosbox_core \
                                dosbox_pure \
                                dosbox_svn \
                                fbneo \
@@ -381,7 +390,7 @@
   elif [ "${PROJECT}" = "Generic" -a "${ARCH}" = "i386" ]; then
     EXCLUDE_LIBRETRO_CORES+=" fake_08 lr_moonlight openlara"
   elif [ "${PROJECT}" = "Ayn" -a "${DEVICE}" = "Odin" ]; then
-    EXCLUDE_LIBRETRO_CORES+=" same_cdi lr_moonlight kronos"
+    EXCLUDE_LIBRETRO_CORES+=" lr_moonlight"
   elif [ "${PROJECT}" = "L4T" -a "${DEVICE}" = "Switch" ]; then
     EXCLUDE_LIBRETRO_CORES+=" kronos"
   fi
@@ -404,8 +413,6 @@
     EXCLUDE_LIBRETRO_CORES+=" boom3 vitaquake3"
   fi
 
-#Always exclude for now: cores dont build
-EXCLUDE_LIBRETRO_CORES+=" same_cdi"
 # exclude some cores at build time
   if [ -n "${EXCLUDE_LIBRETRO_CORES}" ]; then
     for core in ${EXCLUDE_LIBRETRO_CORES} ; do
